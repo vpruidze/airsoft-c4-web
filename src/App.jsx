@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 import Bomb from './components/Bomb';
 import BombButtons from './components/BombButtons';
-import Footer from './components/Footer';
 import Header from './components/Header';
 
 export default function App() {
@@ -14,7 +13,6 @@ export default function App() {
         <Bomb />
         <BombButtons />
       </main>
-      <Footer />
     </>
   );
 }

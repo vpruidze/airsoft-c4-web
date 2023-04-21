@@ -2,8 +2,8 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable prefer-destructuring */
 import React, { useContext, useEffect } from 'react';
-import explosion from '../audio/Bomb C4 Explode Sound Effect [CS:GO].mp3';
-import bombPlanted from '../audio/Bomb Has Been Planted - Sound Effect  CS:GO.mp3';
+import explosion from '../audio/Bomb C4 Explode Sound Effect [CSGO].mp3';
+import bombPlanted from '../audio/Bomb Has Been Planted - Sound Effect  CS GO.mp3';
 import beep from '../audio/Button sound effect.ogg';
 import { TimerContext } from '../context/TimerProvider';
 import explosionGif from '../images/explosion.webp';
@@ -64,6 +64,7 @@ export default function BombButtons() {
       for (const x in numbers) {
         if (String(numbers[x]).length < 2) {
           numbers[x] = `0${numbers[x]}`;
+          beepSound.play();
         }
       }
       document.title = `${numbers[0]}:${numbers[1]}:${numbers[2]}`;

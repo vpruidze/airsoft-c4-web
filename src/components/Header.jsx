@@ -20,7 +20,7 @@ export default function Header() {
         <MdDoNotDisturb style={{ opacity: opac }} />
       </button>
       <h1>
-        🧨 Bomb O'Clock ⏱️
+        🧨 GAA C4 Bomb ⏱️
       </h1>
     </header>
   );
