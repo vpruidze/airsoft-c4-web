@@ -1,0 +1,65 @@
+@font-face {
+  font-family: sevenSegment;
+  src: url('../fonts/seven_segment/Seven Segment.ttf');
+}
+
+.bomb {
+  position: relative;
+}
+
+.bomb img {
+  -webkit-user-drag: none;
+}
+
+.sevenSeg, .reflex {
+  position: absolute;
+  top:43.3%;
+  left: 26.3%;
+  height: 14%;
+  width: 25.5%;
+  transform: translateY(-50%);
+  background-color: black;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.sevenSeg p {
+  font-size: 42px;
+  margin: 0;
+  margin-top: 3%;
+  letter-spacing: 4px;
+  color: #68fcfe;
+  font-style: italic;
+  font-family: sevenSegment;
+  font-weight: bold;
+  position: relative;
+  right: 1.5%;
+  text-shadow: 0px 0px 8px #68fcfe;
+  user-select: none;
+}
+
+@-moz-document url-prefix() {
+  .sevenSeg p {
+    letter-spacing: 3px;
+  }
+}
+
+.reflex {
+  clip-path: polygon(0 0, 63% 0, 42% 99%, 0% 100%);
+  z-index: 2;
+  border-radius: 0;
+  height: 14%;
+  top:43.3%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(102,102,102,0.5) 100%);
+}
+
+@media screen and (max-width: 480px) {
+  .bomb img {
+    width: 100%;
+  }
+  .sevenSeg p {
+    right: 1%;
+    font-size: 5.5vw;
+    letter-spacing: 2.5px;
+  }
+}

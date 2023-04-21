@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.App > img {
+  width: 200%;
+  position: fixed;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 5;
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .App img {
+    width: 350%;
+    left: 71%;
+  }
+}
