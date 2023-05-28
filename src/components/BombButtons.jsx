@@ -14,7 +14,7 @@ const beepSound = new Audio(beep);
 const bombHasBeenPlanted = new Audio(bombPlanted);
 const explosionSound = new Audio(explosion);
 
-export default function BombButtons() {
+export default function BombButtons({onBombStarted}) {
   const {
     time, setTime, display, setDisplay, opac,
   } = useContext(TimerContext);
@@ -45,6 +45,7 @@ export default function BombButtons() {
   const startBomb = () => {
     bombHasBeenPlanted.play();
     document.getElementById('buttons').style.display = 'none';
+    onBombStarted(true);
 
     let secs = Number(display.split(':')[2]);
     let mins = Number(display.split(':')[1]);
@@ -84,6 +85,7 @@ export default function BombButtons() {
       }
 
       if (hours === 0 && mins === 0 && secs < 0) {
+        onBombStarted(false);
         document.title = "Bomb O'Clock";
         clearInterval(timer);
         setTime('000000');
